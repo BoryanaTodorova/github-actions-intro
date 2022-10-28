@@ -6,9 +6,13 @@ jobs:
   run-shell-command:
     runs-on: ubuntu-latest
     steps:
-      - name: echo a string
+      - name: List files
+        run: |
+          pwd
+          ls -a
+      - name: Echo a string
         run: echo "Hello Bobi"
-      - name: multiline script
+      - name: Multiline script
         run: |
           node -v
           npm -v
