@@ -10,6 +10,16 @@ jobs:
         run: |
           pwd
           ls -a
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "${{ github.token }}"           
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: List files after Checkout
+        run: |
+          pwd
+          ls -a      
       - name: Echo a string
         run: echo "Hello Bobi"
       - name: Multiline script
