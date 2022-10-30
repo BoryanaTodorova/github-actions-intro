@@ -19,7 +19,7 @@ jobs:
       - name: Create a default theme issue
         uses: dacbd/create-issue-action@v1
         with:
-          token:  ${{ secrets.GH_TOKEN }}
+          token:  ${{ github.token }}
           repo: github-actions-intro
           title: Default Theme <a href="https://github.com/telerik/kendo-themes/blob/master/packages/default/CHANGELOG.md#${{ github.event.inputs.themes_release_date }}">v.${{ github.event.inputs.themes_vertion }}</a>
           milestone: 3.8.0
