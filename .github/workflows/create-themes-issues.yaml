@@ -1,0 +1,28 @@
+name: Create themes issues
+
+on: 
+  workflow_dispatch:
+    inputs:
+      themes_version:
+        description: 'Themes version'
+        required: true
+      themes_release_date:
+        description: 'Themes release date'
+        required: true
+
+jobs:
+  create_themes_issues:
+    runs-on: ubuntu-latest
+    permissions:
+        issues: write
+    steps:
+      - name: Create a default theme issue
+        uses: dacbd/create-issue-action@v1
+        with:
+          token:  ${{ secrets.GH_TOKEN }}
+#          org: telerik
+          repo: github-actions-intro
+          title: Default Theme <a href="https://github.com/telerik/kendo-themes/blob/master/packages/default/CHANGELOG.md#${{ github.event.inputs.themes_release_date }}">v.${{ github.event.inputs.themes_vertion }}</a>
+          milestone: 3.8.0
+          labels: "Enhancement, Completed"
+    
