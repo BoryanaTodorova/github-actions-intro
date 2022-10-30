@@ -22,4 +22,5 @@ jobs:
           title: Default Theme
           milestone: 3.8.0
           labels: "Enhancement, Completed"
+          body: Test 1
     
