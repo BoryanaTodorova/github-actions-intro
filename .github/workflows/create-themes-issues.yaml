@@ -7,7 +7,7 @@ on:
         description: 'Themes version'
         required: true
       themes_release_date:
-        description: 'Themes release date'
+        description: 'Themes release date (Mandatory format: 550-2022-06-13. First three numbers are the release version.)'
         required: true
       milestone_id:
         description: 'Milestone ID'
