@@ -21,6 +21,7 @@ jobs:
           token: ${{ github.token }}
           repo: github-actions-intro
           title: Default Theme
+          milestone: 1
           labels: "Enhancement, Completed"
           body: Test 1
       - name: Close Issue
