@@ -19,7 +19,7 @@ jobs:
         with:
           token: ${{ secrets.GH_TOKEN }}
           repo: github-actions-intro
-          title: Default Theme <a href="https://github.com/telerik/kendo-themes/blob/master/packages/default/CHANGELOG.md#${{ github.event.inputs.themes_release_date }}">v.${{ github.event.inputs.themes_vertion }}</a>
+          title: Default Theme
           milestone: 3.8.0
           labels: "Enhancement, Completed"
     
