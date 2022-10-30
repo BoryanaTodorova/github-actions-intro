@@ -9,6 +9,9 @@ on:
       themes_release_date:
         description: 'Themes release date'
         required: true
+      milestone_id:
+        description: 'Milestone ID'
+        required: true
 
 jobs:
   create_themes_issues:
@@ -20,8 +23,8 @@ jobs:
         with:
           token: ${{ github.token }}
           repo: github-actions-intro
-          title: Default Theme
-          milestone: 1
+          title: Default Theme <a href="https://github.com/telerik/kendo-themes/blob/master/packages/default/CHANGELOG.md#${{ github.event.inputs.themes_release_date }}">v.${{ github.event.inputs.themes_version }}</a>
+          milestone: '${{ github.event.inputs.milestone_id }}'
           labels: "Enhancement, Completed"
           body: Test 1
       - name: Close Issue
