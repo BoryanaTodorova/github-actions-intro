@@ -21,7 +21,7 @@ jobs:
         id: issue
         uses: dacbd/create-issue-action@v1
         with:
-          token: ${{ github.token }}
+          token: ${{ secrets.GH_TOKEN }}
           repo: github-actions-intro
           title: Default Theme <a href="https://github.com/telerik/kendo-themes/blob/master/packages/default/CHANGELOG.md#${{ github.event.inputs.themes_release_date }}">v.${{ github.event.inputs.themes_version }}</a>
           milestone: '${{ github.event.inputs.milestone_id }}'
