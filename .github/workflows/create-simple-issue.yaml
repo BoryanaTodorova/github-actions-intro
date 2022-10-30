@@ -1,0 +1,16 @@
+name: Create simple issue
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  create_simple_issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create a simple issue
+        uses: dacbd/create-issue-action@v1
+        with:
+          token: ${{ github.token }}
+          repo: github-actions-intro
+          title: Simple test issue
+          body: my new issue
