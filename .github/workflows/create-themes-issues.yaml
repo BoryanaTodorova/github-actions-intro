@@ -20,7 +20,6 @@ jobs:
         uses: dacbd/create-issue-action@v1
         with:
           token:  ${{ secrets.GH_TOKEN }}
-#          org: telerik
           repo: github-actions-intro
           title: Default Theme <a href="https://github.com/telerik/kendo-themes/blob/master/packages/default/CHANGELOG.md#${{ github.event.inputs.themes_release_date }}">v.${{ github.event.inputs.themes_vertion }}</a>
           milestone: 3.8.0
