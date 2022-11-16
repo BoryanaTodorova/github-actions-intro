@@ -10,14 +10,14 @@ on:
         description: 'Themes release date (Mandatory format: 550-2022-06-13. First three numbers are the release version.)'
         required: true
       milestone_id:
-        description: 'Milestone ID'
+        description: 'Milestone ID (not version)'
         required: true
 
 jobs:
   create_themes_issues:
     runs-on: ubuntu-latest
     steps:
-      - name: Create a default theme issue
+      - name: Create a Default theme issue
         id: issue
         uses: dacbd/create-issue-action@v1
         with:
@@ -25,8 +25,38 @@ jobs:
           repo: github-actions-intro
           title: Default Theme <a href="https://github.com/telerik/kendo-themes/blob/master/packages/default/CHANGELOG.md#${{ github.event.inputs.themes_release_date }}">v.${{ github.event.inputs.themes_version }}</a>
           milestone: '${{ github.event.inputs.milestone_id }}'
-          labels: "Enhancement, Completed"
-          body: Test 1
+          labels: "Enhancement"
+          body: The issue serves only for the purpose of release notes generation.
+      - name: Create a Bootstrap theme issue
+        id: issue
+        uses: dacbd/create-issue-action@v1
+        with:
+          token: ${{ github.token }}
+          repo: github-actions-intro
+          title: Bootstrap Theme <a href="https://github.com/telerik/kendo-themes/blob/master/packages/boostrap/CHANGELOG.md#${{ github.event.inputs.themes_release_date }}">v.${{ github.event.inputs.themes_version }}</a>
+          milestone: '${{ github.event.inputs.milestone_id }}'
+          labels: "Enhancement"
+          body: The issue serves only for the purpose of release notes generation.
+      - name: Create a Material theme issue
+        id: issue
+        uses: dacbd/create-issue-action@v1
+        with:
+          token: ${{ github.token }}
+          repo: github-actions-intro
+          title: Material Theme <a href="https://github.com/telerik/kendo-themes/blob/master/packages/material/CHANGELOG.md#${{ github.event.inputs.themes_release_date }}">v.${{ github.event.inputs.themes_version }}</a>
+          milestone: '${{ github.event.inputs.milestone_id }}'
+          labels: "Enhancement"
+          body: The issue serves only for the purpose of release notes generation.
+      - name: Create a Fluent theme issue
+        id: issue
+        uses: dacbd/create-issue-action@v1
+        with:
+          token: ${{ github.token }}
+          repo: github-actions-intro
+          title: Fluent Theme <a href="https://github.com/telerik/kendo-themes/blob/master/packages/fluent/CHANGELOG.md#${{ github.event.inputs.themes_release_date }}">v.${{ github.event.inputs.themes_version }}</a>
+          milestone: '${{ github.event.inputs.milestone_id }}'
+          labels: "Enhancement"
+          body: The issue serves only for the purpose of release notes generation.
       - name: Close Issue
         uses: peter-evans/close-issue@v2
         with:
