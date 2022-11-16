@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       themes_version:
-        description: 'Themes version'
+        description: 'Themes version (e.g. 5.5.0)'
         required: true
       themes_release_date:
         description: 'Themes release date (Mandatory format: 550-2022-06-13. First three numbers are the release version.)'
@@ -30,7 +30,7 @@ jobs:
       - name: Close Issue
         uses: peter-evans/close-issue@v2
         with:
-          issue-number: ${{ steps.issue.outputs.number }}
+          issue-number: ${{ steps.issue_1.outputs.number }}
           comment: Auto-closing issue
       - name: Create a Bootstrap theme issue
         id: issue_2
@@ -45,7 +45,7 @@ jobs:
       - name: Close Issue
         uses: peter-evans/close-issue@v2
         with:
-          issue-number: ${{ steps.issue.outputs.number }}
+          issue-number: ${{ steps.issue_2.outputs.number }}
           comment: Auto-closing issue
       - name: Create a Material theme issue
         id: issue_3
@@ -60,7 +60,7 @@ jobs:
       - name: Close Issue
         uses: peter-evans/close-issue@v2
         with:
-          issue-number: ${{ steps.issue.outputs.number }}
+          issue-number: ${{ steps.issue_3.outputs.number }}
           comment: Auto-closing issue
       - name: Create a Fluent theme issue
         id: issue_4
@@ -75,7 +75,7 @@ jobs:
       - name: Close Issue
         uses: peter-evans/close-issue@v2
         with:
-          issue-number: ${{ steps.issue.outputs.number }}
+          issue-number: ${{ steps.issue_4.outputs.number }}
           comment: Auto-closing issue
       
     
