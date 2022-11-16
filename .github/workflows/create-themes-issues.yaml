@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create a Default theme issue
-        id: issue
+        id: issue_1
         uses: dacbd/create-issue-action@v1
         with:
           token: ${{ github.token }}
@@ -28,7 +28,7 @@ jobs:
           labels: "Enhancement"
           body: The issue serves only for the purpose of release notes generation.
       - name: Create a Bootstrap theme issue
-        id: issue
+        id: issue_2
         uses: dacbd/create-issue-action@v1
         with:
           token: ${{ github.token }}
@@ -38,7 +38,7 @@ jobs:
           labels: "Enhancement"
           body: The issue serves only for the purpose of release notes generation.
       - name: Create a Material theme issue
-        id: issue
+        id: issue_3
         uses: dacbd/create-issue-action@v1
         with:
           token: ${{ github.token }}
@@ -48,7 +48,7 @@ jobs:
           labels: "Enhancement"
           body: The issue serves only for the purpose of release notes generation.
       - name: Create a Fluent theme issue
-        id: issue
+        id: issue_4
         uses: dacbd/create-issue-action@v1
         with:
           token: ${{ github.token }}
